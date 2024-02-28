@@ -1,0 +1,21 @@
+
+print("ax**2+bx+c=0")
+
+num1 = float(input("請輸入數字a:"))
+num2 = float(input("請輸入數字b:"))
+num3 = float(input("請輸入數字c:"))
+
+print(str(num1)+"x**2"+"+"+str(num2)+"x"+"+"+str(num3)+"=0")
+
+import math 
+
+D = (num2**2)-(4*num1*num3)
+if D < 0:
+    print("無解")
+elif D == 0:
+    root1 = ((-num2)+math.sqrt(D))/(2*num1)
+    print("重根", root1)
+else:
+    root2 = ((-num2)+math.sqrt(D))/(2*num1)
+    root3 = ((-num2)-math.sqrt(D))/(2*num1)
+    print("兩相異實數解", root2, root3)
