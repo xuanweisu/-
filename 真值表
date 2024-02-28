@@ -1,0 +1,38 @@
+
+propositions = [(False, False), (False, True), (True, False), (True, True)]
+
+
+headers = ['P', 'Q', 'P ∧ Q', 'P ∨ Q', 'P ∧ ¬Q', 'P ∨ ¬Q', 'P → Q', 'P ← Q', 'P ↔ Q']
+
+
+def bool_to_str(value):
+    return 'T' if value else 'F'
+
+
+print("|", " | ".join(headers), "|")
+print("|","---|" * len(headers))
+
+
+for p, q in propositions:
+    
+    p_and_q = p and q
+    p_or_q = p or q
+    p_and_not_q = p and not q
+    p_or_not_q = p or not q
+    p_implies_q = not p or q
+    p_implies_not_q = not p or not q
+    p_iff_q = (p and q) or (not p and not q)
+    
+    
+    p_str = bool_to_str(p)
+    q_str = bool_to_str(q)
+    p_and_q_str = bool_to_str(p_and_q)
+    p_or_q_str = bool_to_str(p_or_q)
+    p_and_not_q_str = bool_to_str(p_and_not_q)
+    p_or_not_q_str = bool_to_str(p_or_not_q)
+    p_implies_q_str = bool_to_str(p_implies_q)
+    p_implies_not_q_str = bool_to_str(p_implies_not_q)
+    p_iff_q_str = bool_to_str(p_iff_q)
+
+    print(f"| {p_str} | {q_str} | {p_and_q_str} | {p_or_q_str} | {p_and_not_q_str} | {p_or_not_q_str} | {p_implies_q_str} | {p_implies_not_q_str} | {p_iff_q_str} |")
+    
