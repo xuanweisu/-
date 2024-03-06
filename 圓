@@ -1,0 +1,8 @@
+
+import math
+
+radius = float(input("請輸入圓的半徑: "))
+circumference = 2 * math.pi * radius
+area = radius**2*math.pi
+print("周長"+str(circumference))
+print("面積"+str(area))
