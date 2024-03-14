@@ -1,0 +1,25 @@
+import random
+
+
+suits = ['♠', '♣', '♥', '♦']
+ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
+deck = [(rank, suit) for suit in suits for rank in ranks]
+
+
+random.shuffle(deck)
+
+
+players = [[] for _ in range(4)]
+for i in range(len(deck)):
+    players[i % 4].append(deck[i])
+
+
+for player in players:
+    player.sort(key=lambda x: (ranks.index(x[0]), suits.index(x[1])))
+
+
+for i, player in enumerate(players):
+    print(f"Player {i + 1}'s cards:")
+    for card in player:
+        print(f"{card[0]}{card[1]}", end=" ")
+    print()
