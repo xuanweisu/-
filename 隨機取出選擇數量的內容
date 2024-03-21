@@ -1,0 +1,22 @@
+import random
+
+questions_dict = {
+    "你叫什麼名子?": "我是你爸爸",
+    "你喜歡我嗎?": "我覺得義大利麵要加24號混泥土",
+    "陳柏綸矮嗎?": "他到余家儀那裡剛好",
+    "顆痣頻甚麼時候會分手?": "當忠誠佑跟她告白的時候",
+}
+
+num_selections = 3
+
+selected_questions = {}
+
+if num_selections >= len(questions_dict):
+    selected_questions = questions_dict
+else:
+    selected_keys = random.sample(list(questions_dict.keys()), num_selections)
+    for key in selected_keys:
+        selected_questions[key] = questions_dict[key]
+
+for question, answer in selected_questions.items():
+    print(question + ": " + answer)
