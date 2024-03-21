@@ -1,0 +1,11 @@
+print("數字範圍:1-100")
+import random
+secret_num = random.randint(1,100)
+guess = None
+while secret_num != guess:
+    guess = int(input("請輸入數字: "))
+    if guess > secret_num:
+        print("小一點")
+    elif guess < secret_num:
+        print("大一點")
+print("恭喜答對")
